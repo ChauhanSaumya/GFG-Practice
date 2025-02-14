@@ -13,14 +13,17 @@ using namespace std;
 class Solution {
   public:
     int largest(vector<int> &arr) {
-        int max = arr[0];
-        int max2;
-        for (int i = 1; i<arr.size(); i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+        // code here
+        int maxi=arr[0];
+        int n=arr.size();
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]>maxi)
+            {
+                maxi=arr[i];
             }
         }
-        return max;
+        return maxi;
     }
 };
 
@@ -46,6 +49,7 @@ int main() {
 
         Solution ob;
         cout << ob.largest(arr) << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
