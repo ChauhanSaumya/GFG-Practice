@@ -4,20 +4,17 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-  int cnt=0;
     void printGfg(int N) {
         // Code here
-        if (cnt == N)
-        {
-            return;
-        }
-        cnt++;
+        if(N==0) return;
         cout<<"GFG"<<" ";
-        printGfg(N);
+        printGfg(N-1);
     }
 };
+
 
 
 //{ Driver Code Starts.
@@ -37,7 +34,9 @@ int main() {
         // calling printNos() function
         ob.printGfg(N);
         cout << "\n";
-    }
+    
+cout << "~" << "\n";
+}
     return 0;
 }
 
