@@ -2,43 +2,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
+
 class Solution {
   public:
-    vector<long long> lcmAndGcd(long long A , long long B) {
-        // code here
-       long long gcd=gcdhelp(A,B);
-       long long lcm=(A*B)/gcd;
-       vector<long long> result;
-       result.push_back(lcm);
-       result.push_back(gcd);
-       return result;
+    
+    long long gcdhelp(int a,int b)
+    {
+        while(a>0 && b>0)
+        {
+            if(a>b) a=a%b;
+            else b=b%a;
+        }
+        if(a==0) return b;
+        else return a;
     }
-  long long gcdhelp(long long a,long long b)
-  {
-      while(a>0 && b>0)
-      {
-          if(a>b) {a=a%b;}
-          else b=b%a;
-      }
-      if(b==0)return a;
-      else return b;
-  }
+    vector<int> lcmAndGcd(int a, int b) {
+        // code here
+        long long gcd=gcdhelp(a,b);
+        long long lcm=(a*b)/gcd;
+        vector<int> result;
+        result.push_back(lcm);
+        result.push_back(gcd);
+        return result;
+    }
 };
+
 
 //{ Driver Code Starts.
 int main() {
     int t;
     cin >> t;
+    cin.ignore();
     while (t--) {
-        long long A,B;
-        
-        cin>>A>>B;
+        int A, B;
+
+        cin >> A >> B;
 
         Solution ob;
-        vector<long long> ans = ob.lcmAndGcd(A,B);
-        cout<<ans[0]<<" "<<ans[1]<<endl;
+        vector<int> ans = ob.lcmAndGcd(A, B);
+        cout << ans[0] << " " << ans[1] << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
+
 // } Driver Code Ends
