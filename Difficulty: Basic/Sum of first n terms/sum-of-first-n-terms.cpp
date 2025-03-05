@@ -3,32 +3,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
+
 // User function template for C++
 
 class Solution {
   public:
-  long long sum=0;
-    long long sumOfSeries(long long n) {
+        int cnt=0;
+    int sumOfSeries(int n) {
         // code here
-        if(n!=0)
-        {
-            sum+=n*n*n;
-            sumOfSeries(n-1);
-        }
-         return sum;
+        if(cnt>=n) return 0;
+        cnt++;
+        return (cnt*cnt*cnt)+sumOfSeries(n);
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
     int t;
     cin >> t;
     while (t--) {
-        long long N;
+        int N;
         cin >> N;
         Solution ob;
         cout << ob.sumOfSeries(N) << "\n";
+
+        cout << "~"
+             << "\n";
     }
 }
 // } Driver Code Ends
