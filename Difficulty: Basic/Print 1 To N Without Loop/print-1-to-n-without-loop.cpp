@@ -4,39 +4,41 @@ using namespace std;
 
 
 // } Driver Code Ends
-class Solution{
-    public:
-    //Complete this function
-    int cnt = 0;
-   void printNos(int N) {
-    if (cnt == N) {
-        return;
+
+class Solution {
+  public:
+    // Complete this function
+    int cnt=0;
+    void printNos(int n) {
+        // Your code here
+        if(cnt==n) return;
+        cnt++;
+        cout<<cnt<<" ";
+        printNos(n);
     }
-    cnt++;
-    cout << cnt << " " ; // Print the current number
-    printNos(N);
-}
 };
+
 
 //{ Driver Code Starts.
 /* Driver program to test printNos */
-int main()
-{
+int main() {
     int T;
-    
-    //taking testcases
-    cin>>T;
-    
-    while(T--)
-    {
+
+    // taking testcases
+    cin >> T;
+
+    while (T--) {
         int N;
-        
-        //input N
-        cin>>N;
+
+        // input N
+        cin >> N;
         Solution ob;
-        //calling printNos() function
+        // calling printNos() function
         ob.printNos(N);
         cout << "\n";
+
+        cout << "~"
+             << "\n";
     }
     return 0;
 }
